@@ -1,0 +1,23 @@
+%lex
+
+%%
+
+\s+     /* do nothing */
+\d+     return 'NUMBER'
+
+/lex
+
+%%
+
+E
+    : E '+' t
+    | t
+    ;
+
+T
+    : T '*' F
+    | F
+    ;
+F
+    : NUMBER
+    ;
